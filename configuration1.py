@@ -6,16 +6,17 @@ import pickle
 config_dict = {
     "observation": {
         "type": "OccupancyGrid",
-        "vehicles_count": 10,
-        "features": ["presence", "x", "y", "vx", "vy", "cos_h", "sin_h"],
+        "vehicles_count": 15,
+        "features": ["presence", "x", "y", "vx", "vy"], #, "cos_h", "sin_h"],
         "features_range": {
             "x": [-100, 100],
             "y": [-100, 100],
             "vx": [-20, 20],
             "vy": [-20, 20],
         },
-        "grid_size": [[-20, 20], [-20, 20]],
-        "grid_step": [5, 5],
+        "grid_size": [[-20, 20], [-8, 8]],  # 4 voies de 4m = 16m -> [-8, 8]
+        "grid_step": [5, 4],  # 1 cellule = 1 voie = 4m
+
         "absolute": False,
     },
     "action": {
@@ -25,10 +26,10 @@ config_dict = {
     "vehicles_count": 15,
     "duration": 60,  # [s]
     "initial_spacing": 0,
-    "collision_reward": -1,  # The reward received when colliding with a vehicle.
-    "right_lane_reward": 0.5,  # The reward received when driving on the right-most lanes, linearly mapped to
+    "collision_reward": -1, #-20  # The reward received when colliding with a vehicle.
+    "right_lane_reward": 0.01, # 0.5 The reward received when driving on the right-most lanes, linearly mapped to
     # zero for other lanes.
-    "high_speed_reward": 0.1,  # The reward received when driving at full speed, linearly mapped to zero for
+    "high_speed_reward": 0.2, #3  #0.1 The reward received when driving at full speed, linearly mapped to zero for
     # lower speeds according to config["reward_speed_range"].
     "lane_change_reward": 0,
     "reward_speed_range": [
@@ -45,7 +46,7 @@ config_dict = {
     "show_trajectories": True,
     "render_agent": True,
     "offscreen_rendering": False,
-    "disable_collision_checks": True,
+    "disable_collision_checks": False,
 }
 
 with open("config.pkl", "wb") as f:
