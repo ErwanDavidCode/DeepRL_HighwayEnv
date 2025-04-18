@@ -7,14 +7,14 @@ config_dict = {
     "observation": {
         "type": "OccupancyGrid",
         "vehicles_count": 15,
-        "features": ["presence", "x", "y", "vx", "vy"], #, "cos_h", "sin_h"],
+        "features": ["presence", "x", "y", "vx", "vy", "cos_h", "sin_h"],
         "features_range": {
             "x": [-100, 100],
             "y": [-100, 100],
             "vx": [-20, 20],
             "vy": [-20, 20],
         },
-        "grid_size": [[-20, 20], [-8, 8]],  # 4 voies de 4m = 16m -> [-8, 8]
+        "grid_size": [[-23, 22], [-6, 6]],  # 4 voies de 4m = 16m -> [-8, 8]
         "grid_step": [5, 4],  # 1 cellule = 1 voie = 4m
 
         "absolute": False,
