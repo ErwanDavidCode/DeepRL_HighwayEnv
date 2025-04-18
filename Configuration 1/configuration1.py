@@ -23,13 +23,13 @@ config_dict = {
         "type": "DiscreteMetaAction",
     },
     "lanes_count": 4,
-    "vehicles_count": 15,
+    "vehicles_count": 20,
     "duration": 60,  # [s]
     "initial_spacing": 0,
-    "collision_reward": -1, #-20  # The reward received when colliding with a vehicle.
-    "right_lane_reward": 0.01, # 0.5 The reward received when driving on the right-most lanes, linearly mapped to
+    "collision_reward": -16, #-2  # The reward received when colliding with a vehicle.
+    "right_lane_reward": 0.05, # 0.01 The reward received when driving on the right-most lanes, linearly mapped to
     # zero for other lanes.
-    "high_speed_reward": 0.2, #3  #0.1 The reward received when driving at full speed, linearly mapped to zero for
+    "high_speed_reward": 0.9, #0.2 The reward received when driving at full speed, linearly mapped to zero for
     # lower speeds according to config["reward_speed_range"].
     "lane_change_reward": 0,
     "reward_speed_range": [

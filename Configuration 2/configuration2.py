@@ -20,6 +20,7 @@ config_dict = {
         "longitudinal": False,
         "lateral": True
     },
+    
     "simulation_frequency": 15,
     "policy_frequency": 5,
     "duration": 300,
