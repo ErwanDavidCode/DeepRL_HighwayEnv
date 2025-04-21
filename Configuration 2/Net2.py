@@ -13,6 +13,8 @@ class Net(nn.Module):
         self.net = nn.Sequential(
             nn.Linear(obs_size, hidden_size),
             nn.ReLU(),
+            nn.Linear(hidden_size, hidden_size),  # Couche supplémentaire
+            nn.ReLU(),
             nn.Linear(hidden_size, n_actions),
         )
 
@@ -29,6 +31,8 @@ class NetContinousActions(nn.Module):
         super().__init__()
         self.net = nn.Sequential(
             nn.Linear(obs_dim, hidden_size),
+            nn.ReLU(),
+            nn.Linear(hidden_size, hidden_size),  # Couche supplémentaire
             nn.ReLU(),
             nn.Linear(hidden_size, act_dim),
         )

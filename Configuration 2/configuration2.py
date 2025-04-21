@@ -10,8 +10,9 @@ config_dict = {
     "observation": {
         "type": "OccupancyGrid",
         "features": ['presence', 'on_road'],
-        "grid_size": [[-18, 18], [-18, 18]],
-        "grid_step": [3, 3],
+        "grid_size": [[-21, 21], [-10.3, 10.7]],
+        "grid_step": [6, 3],
+
         "as_image": False,
         "align_to_vehicle_axes": True
     },
@@ -20,15 +21,17 @@ config_dict = {
         "longitudinal": False,
         "lateral": True
     },
-    
     "simulation_frequency": 15,
     "policy_frequency": 5,
     "duration": 300,
-    "collision_reward": -1,
-    "lane_centering_cost": 4,
-    "action_reward": -0.3,
+    "collision_reward": -30,
+    #"lane_centering_cost": 0.2,
+    "action_reward": -0.5, #-0.3,
+    "on_road_reward": 0.5,
+    "no_collision_reward": 10,
+    #off_road_reward": -3,
     "controlled_vehicles": 1,
-    "other_vehicles": 1,
+    "other_vehicles": 10,
     "screen_width": 600,
     "screen_height": 600,
     "centering_position": [0.5, 0.5],

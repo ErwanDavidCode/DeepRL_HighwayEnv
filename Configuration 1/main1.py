@@ -452,13 +452,13 @@ agent = DQN(
     buffer_capacity=150000,
     update_target_every=100,
     epsilon_start=1.0,
-    decrease_epsilon_factor=2000,  # decrease agressif
+    decrease_epsilon_factor=3000,  # decrease agressif
     epsilon_min=0.1,
     learning_rate=2e-4,
 )
 
 
-n_episodes = 30
+n_episodes = 5000
 rewards_per_episode = []
 loss_per_episode = []
 moving_avg_rewards = []
