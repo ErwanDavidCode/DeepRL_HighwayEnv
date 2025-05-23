@@ -7,10 +7,6 @@ The goal of this project is to create differents agents to sole differents highw
 - Erwan DAVID
 - Guillaume FAYNOT
 
-## Requirements
-
-Install the requirements in the file [`requirements.txt`]('./requirements.txt')
-
 ## Run the simulation 
 
 Train your agent on a specific environment by one of the following command in the appropriate folder :
